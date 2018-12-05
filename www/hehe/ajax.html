@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+
+	</head>
+
+	<body>
+<h1>ajax</h1>
+<button class="btn4">mystring</button>
+<button class="btn5">daraFromAjax</button>
+<button class="btn6">mydict</button>
+
+	<button class="btn6_2">mydict</button>
+			<script>
+			$(document).ready(function() {
+				$('.btn4').click(function() {
+					$.ajax({
+						url: "/api/mystring",
+						data: {
+							'mydata': 'test'
+						},
+						success: function(data) {
+							alert(data);
+						}
+
+					});
+				})
+				$('.btn6_2').click(function() {
+					$.ajax({
+						url: "/api/dataFromAjax",
+						data: {
+							'mydata': 'test data'
+						},
+						success: function(data) {
+							alert(data);
+						}
+					});
+				})
+				$('.btn5').click(function() {
+					$.ajax({
+
+						url: "/api/mydict",
+						success: function(data) {
+							alert('name:'+data.name+'age'+data.age);
+						}
+					});
+				})
+				$('.btn6').click(function(){
+					$.ajax({
+						url: "/api/mylist",
+						success: function(data) {
+							alert('name:'+data[0]+'age'+data[1]);
+						}
+					});
+				})
+			})
+		</script>
+</body>
+
+</html>
