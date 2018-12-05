@@ -15,7 +15,16 @@ city = company_data_info.company_address.unique()
 #公司等级
 level = company_data_info.company_level.unique()
 #业务类型
-work = company_data_info.item_title.unique()
-print(city,type(city),len(city))
-print(level,len(level))
-print(work,len(work))
+work_type = company_data_info.item_title.unique()
+#服务雇主数量
+server_num = company_data_info.serviced_employer.unique()
+#雇主回头率
+head_turn = company_data_info.head_turn.unique()
+#好评率
+good_tare = company_data_info.good_rate.unique()
+work_list = []
+for type in work_type:
+    company = company_data_info[company_data_info['item_title'].str.contains(type)]
+    shuzu = np.array([type,len(company)])
+    work_list.append(shuzu)
+print(work_list)
