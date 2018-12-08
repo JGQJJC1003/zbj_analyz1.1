@@ -103,3 +103,56 @@ def yuce():
         return index
     # 使不同的职业分别对应其在数组中的索引
     company_data_info['link_name'] = company_data_info['link_name'].map(linkint)
+def price():
+    job_type = list(company_data_info.link_name.unique())
+    job_type_array = company_data_info.link_name.unique()
+    # 存放每个公司的平均价格
+    price_mine_list = []
+    # 存放所有公司的平均价格
+    prices_mine_list = []
+    # 找出每个业务对应的所有价格
+    for type in job_type:
+        # 获取每个业务类型的所有公司，比如是A公司
+        company_id_list = list(company_data_info[company_data_info['link_name'].str.contains(type)]['company_id'])
+        for id_list in company_id_list:
+            # 根据公司ID查询对应的案例价格
+            price_list_str = list(comment_data_info[comment_data_info['company_id'] == id_list]['price'])
+            price_list_int = list(map(lambda x: float(x), list(map(lambda x: x.rstrip('元'), price_list_str))))
+            # 对业务类型的价格求平均值
+            if len(price_list_int) > 0:
+                mine_prices = (reduce(lambda x, y: x + y, price_list_int) / len(price_list_int))
+            else:
+                mine_prices = 0
+                # 将每个公司的平均价格放在一个列表里面
+            price_mine_list.append(mine_prices)
+            # 对所有公司的价格进行平均
+        mine_prices_all = (reduce(lambda x, y: x + y, price_mine_list)) / len(company_id_list)
+        # 把得出的结果放在列表里，一个类型对应一个平均价格
+        prices_mine_list.append(mine_prices_all)
+    # 有平均价格，有各种业务类型,城市
+    prices_list_mine = []
+    prices_list = []
+    level_list = []
+    # 每一个城市,成城市数量与价格,与业务类型对上了，372个
+    for city in cities:
+        # 每个城市对应的业务类型
+        company_level = company_data_info[company_data_info['company_address'].isin([city])]['link_name']
+        level_list.append(list(company_level))
+        # 业务类型对应的公司ID
+        compan_id = company_data_info[company_data_info['link_name'].isin(company_level)]['company_id']
+        # 公司Id对应的价格
+        prices = list(comment_data_info[comment_data_info['company_id'].isin(compan_id)]['price'])
+        if len(prices) > 0:
+            prices_int = list(map(lambda x: float(x), map(lambda x: x.rstrip('元'), prices)))
+
+            prices_int_mine = (reduce(lambda x, y: x + y, prices_int)) / len(prices_int)
+        else:
+            prices_int = 0
+            prices_int_mine = 0
+        prices_list.append(prices_int)
+        prices_list_mine.append(prices_int_mine)
+    bar1 = Bar("各城市总业务的平均价格")
+    bar1.add("城市", cities, prices_list_mine,is_label_emphasis=True,is_datazoom_show=True)
+    bar1.render("price_mine_zhu.html")
+
+price()
