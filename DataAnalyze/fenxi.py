@@ -154,5 +154,4 @@ def price():
     bar1 = Bar("各城市总业务的平均价格")
     bar1.add("城市", cities, prices_list_mine,is_label_emphasis=True,is_datazoom_show=True)
     bar1.render("price_mine_zhu.html")
-
 price()
