@@ -154,4 +154,23 @@ def price():
     bar1 = Bar("各城市总业务的平均价格")
     bar1.add("城市", cities, prices_list_mine,is_label_emphasis=True,is_datazoom_show=True)
     bar1.render("price_mine_zhu.html")
-price()
+def ciyun():
+    level_list = []
+    name_level = []
+    num_list = []
+    # 每一个城市,成城市数量与价格,与业务类型对上了，372个
+    for city in cities:
+        # 每个城市对应的业务类型
+        company_level = company_data_info[company_data_info['company_address'].isin([city])]['link_name']
+        level_list.append(list(company_level))
+    for level in level_list:
+        for le in level:
+            name_level.append(le)
+    set_level_name = set(name_level)
+    for i in set_level_name:
+        x = name_level.count(i)
+        num_list.append(x)
+    wd = WordCloud(width=1300, height=620)
+    wd.add("业务类型排名", list(set_level_name), num_list, word_size_range=(20, 100))
+    wd.render('wordcloud.html')
+ciyun()
