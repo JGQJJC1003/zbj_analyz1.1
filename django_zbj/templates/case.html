@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script type="text/javascript">
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">二师兄网</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#">首页 <span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                    <a href="#">数据分析</a>
+                </li>
+                <li>
+                    <a href="#">分类</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true"
+                       aria-expanded="false">关于我们 </a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    {% if islog %}
+                        <a href="{% url 'zbj:login' %}">{{ username }}</a>
+                    {% else %}
+                        <a href="{% url 'zbj:login' %}">登录</a>
+                    {% endif %}
+                </li>
+                <li>
+                    {% if islog %}
+                        <a href="{% url 'zbj:logout' %}">退出登录</a>
+                    {% else %}
+                        <a href="{% url 'zbj:register' %}">注册</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url({% static 'img/ads/1.gif' %})"></div>
+        <div class="swiper-slide" style="background-image:url({% static 'img/ads/2.gif' %})"></div>
+        <div class="swiper-slide" style="background-image:url({% static 'img/ads/3.gif' %})"></div>
+        <div class="swiper-slide" style="background-image:url({% static 'img/ads/3.gif' %})"></div>
+        <div class="swiper-slide" style="background-image:url({% static 'img/ads/3.gif' %})"></div>
+        <div class="swiper-slide" style="background-image:url({% static 'img/ads/3.gif' %})"></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination-white"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+</div>
+
+<div class="main-text">
+
+    <div class="list blue" style="min-height: 16.58em; ">
+        <p>
+            <a href="http://product.yesky.com/product/1047/1047154/" target="_blank"><img
+                    src="http://pimages3.tianjimedia.com/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg"
+                    alt="华为Mate 20(64GB/全网通) 手机/华为"></a>
+        </p>
+
+        <h2><a href="http://product.yesky.com/product/1047/1047154/" target="_blank">华为Mate 20(64GB/全网通)</a></h2>
+        <span><h3 class="orange">
+            <a href="http://product.yesky.com/product/1047/1047154/price.shtml" target="_blank"
+               title="华为Mate 20(64GB/全网通)手机报价">￥3999</a>
+    </h3><a target="_parent"
+            onclick="addnewcompare(291,1047154,'华为Mate 20(64GB/全网通)','http://dynamic-image.yesky.com/60x60/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg'); return false;"
+            class="duibi"></a></span>
+
+        <span>
+    <a href="http://product.yesky.com/product/1047/1047154/param.shtml" target="_blank">详情&gt;</a>
+        </span>
+    </div>
+    <div class="list blue" style="min-height: 16.58em; ">
+        <p>
+            <a href="http://product.yesky.com/product/1047/1047154/" target="_blank"><img
+                    src="http://pimages3.tianjimedia.com/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg"
+                    alt="华为Mate 20(64GB/全网通) 手机/华为"></a>
+        </p>
+
+        <h2><a href="http://product.yesky.com/product/1047/1047154/" target="_blank">华为Mate 20(64GB/全网通)</a></h2>
+        <span><h3 class="orange">
+            <a href="http://product.yesky.com/product/1047/1047154/price.shtml" target="_blank"
+               title="华为Mate 20(64GB/全网通)手机报价">￥3999</a>
+    </h3><a target="_parent"
+            onclick="addnewcompare(291,1047154,'华为Mate 20(64GB/全网通)','http://dynamic-image.yesky.com/60x60/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg'); return false;"
+            class="duibi"></a></span>
+
+        <span>
+    <a href="http://product.yesky.com/product/1047/1047154/param.shtml" target="_blank">详情&gt;</a>
+        </span>
+    </div>
+    <div class="list blue" style="min-height: 16.58em; ">
+        <p>
+            <a href="http://product.yesky.com/product/1047/1047154/" target="_blank"><img
+                    src="http://pimages3.tianjimedia.com/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg"
+                    alt="华为Mate 20(64GB/全网通) 手机/华为"></a>
+        </p>
+
+        <h2><a href="http://product.yesky.com/product/1047/1047154/" target="_blank">华为Mate 20(64GB/全网通)</a></h2>
+        <span><h3 class="orange">
+            <a href="http://product.yesky.com/product/1047/1047154/price.shtml" target="_blank"
+               title="华为Mate 20(64GB/全网通)手机报价">￥3999</a>
+    </h3><a target="_parent"
+            onclick="addnewcompare(291,1047154,'华为Mate 20(64GB/全网通)','http://dynamic-image.yesky.com/60x60/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg'); return false;"
+            class="duibi"></a></span>
+
+        <span>
+    <a href="http://product.yesky.com/product/1047/1047154/param.shtml" target="_blank">详情&gt;</a>
+        </span>
+    </div>
+    <div class="list blue" style="min-height: 16.58em; ">
+        <p>
+            <a href="http://product.yesky.com/product/1047/1047154/" target="_blank"><img
+                    src="http://pimages3.tianjimedia.com/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg"
+                    alt="华为Mate 20(64GB/全网通) 手机/华为"></a>
+        </p>
+
+        <h2><a href="http://product.yesky.com/product/1047/1047154/" target="_blank">华为Mate 20(64GB/全网通)</a></h2>
+        <span><h3 class="orange">
+            <a href="http://product.yesky.com/product/1047/1047154/price.shtml" target="_blank"
+               title="华为Mate 20(64GB/全网通)手机报价">￥3999</a>
+    </h3><a target="_parent"
+            onclick="addnewcompare(291,1047154,'华为Mate 20(64GB/全网通)','http://dynamic-image.yesky.com/60x60/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg'); return false;"
+            class="duibi"></a></span>
+
+        <span>
+    <a href="http://product.yesky.com/product/1047/1047154/param.shtml" target="_blank">详情&gt;</a>
+        </span>
+    </div>
+    <div class="list blue" style="min-height: 16.58em; ">
+        <p>
+            <a href="http://product.yesky.com/product/1047/1047154/" target="_blank"><img
+                    src="http://pimages3.tianjimedia.com/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg"
+                    alt="华为Mate 20(64GB/全网通) 手机/华为"></a>
+        </p>
+
+        <h2><a href="http://product.yesky.com/product/1047/1047154/" target="_blank">华为Mate 20(64GB/全网通)</a></h2>
+        <span><h3 class="orange">
+            <a href="http://product.yesky.com/product/1047/1047154/price.shtml" target="_blank"
+               title="华为Mate 20(64GB/全网通)手机报价">￥3999</a>
+    </h3><a target="_parent"
+            onclick="addnewcompare(291,1047154,'华为Mate 20(64GB/全网通)','http://dynamic-image.yesky.com/60x60/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg'); return false;"
+            class="duibi"></a></span>
+
+        <span>
+    <a href="http://product.yesky.com/product/1047/1047154/param.shtml" target="_blank">详情&gt;</a>
+        </span>
+    </div>
+    <div class="list blue" style="min-height: 16.58em; ">
+        <p>
+            <a href="http://product.yesky.com/product/1047/1047154/" target="_blank"><img
+                    src="http://pimages3.tianjimedia.com/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg"
+                    alt="华为Mate 20(64GB/全网通) 手机/华为"></a>
+        </p>
+
+        <h2><a href="http://product.yesky.com/product/1047/1047154/" target="_blank">华为Mate 20(64GB/全网通)</a></h2>
+        <span><h3 class="orange">
+            <a href="http://product.yesky.com/product/1047/1047154/price.shtml" target="_blank"
+               title="华为Mate 20(64GB/全网通)手机报价">￥3999</a>
+    </h3><a target="_parent"
+            onclick="addnewcompare(291,1047154,'华为Mate 20(64GB/全网通)','http://dynamic-image.yesky.com/60x60/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg'); return false;"
+            class="duibi"></a></span>
+
+        <span>
+    <a href="http://product.yesky.com/product/1047/1047154/param.shtml" target="_blank">详情&gt;</a>
+        </span>
+    </div>
+    <div class="list blue" style="min-height: 16.58em; ">
+        <p>
+            <a href="http://product.yesky.com/product/1047/1047154/" target="_blank"><img
+                    src="http://pimages3.tianjimedia.com/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg"
+                    alt="华为Mate 20(64GB/全网通) 手机/华为"></a>
+        </p>
+
+        <h2><a href="http://product.yesky.com/product/1047/1047154/" target="_blank">华为Mate 20(64GB/全网通)</a></h2>
+        <span><h3 class="orange">
+            <a href="http://product.yesky.com/product/1047/1047154/price.shtml" target="_blank"
+               title="华为Mate 20(64GB/全网通)手机报价">￥3999</a>
+    </h3><a target="_parent"
+            onclick="addnewcompare(291,1047154,'华为Mate 20(64GB/全网通)','http://dynamic-image.yesky.com/60x60/resources/product/20181017/TRR92OTPN374Y28FKW565GJS03YI59HC.jpg'); return false;"
+            class="duibi"></a></span>
+
+        <span>
+    <a href="http://product.yesky.com/product/1047/1047154/param.shtml" target="_blank">详情&gt;</a>
+        </span>
+
+    </div>
+
+</div>
+<div class="page">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#">Previous</a>
+            </li>
+
+            <li class="page-item">
+                <a class="page-link" href="#">....</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/shop.js' %}"></script>
+</body>
+
+</html>

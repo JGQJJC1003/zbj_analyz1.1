@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>登录</title>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+					<a class="navbar-brand" href="#">二师兄</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="{% url 'zbj:index' %}">首页 <span class="sr-only">(current)</span></a>
+						</li><li>
+							<a href="{% url 'zbj:data' %}">数据分析</a>
+						</li>
+						<li>
+							<a href="{% url 'zbj:classifier' %}">分类</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">关于我们 </a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							{% if islog %}
+                                <a href="{% url 'zbj:login' %}">{{ username }}</a>
+                            {% else %}
+                                <a href="{% url 'zbj:login' %}">登录</a>
+                            {% endif %}
+						</li>
+						<li>
+                            {% if islog %}
+                                <a href="{% url 'zbj:logout' %}">退出登录</a>
+                            {% else %}
+                                <a href="{% url 'zbj:register' %}">注册</a>
+                            {% endif %}						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+    <div class="container">
+
+      <form class="form-signin" method="post" action="{% url 'zbj:login' %}">
+          {% csrf_token %}
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input name='email' type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input name='password' type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div>
+		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+	</body>
+
+</html>

@@ -1,0 +1,412 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/evaluation.css' %}">
+
+		<script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+					<a class="navbar-brand" href="#">二师兄</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="{% url 'zbj:index' %}">首页 <span class="sr-only">(current)</span></a>
+						</li><li>
+							<a href="{% url 'zbj:data' %}">数据分析</a>
+						</li>
+						<li>
+							<a href="{% url 'zbj:classifier' %}">分类</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">关于我们 </a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							{% if islog %}
+                                <a href="{% url 'zbj:login' %}">{{ username }}</a>
+                            {% else %}
+                                <a href="{% url 'zbj:login' %}">登录</a>
+                            {% endif %}
+						</li>
+						<li>
+                            {% if islog %}
+                                <a href="{% url 'zbj:logout' %}">退出登录</a>
+                            {% else %}
+                                <a href="{% url 'zbj:register' %}">注册</a>
+                            {% endif %}						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id='body'>
+			<div class="" style="padding:10px;width: 100%;height: 200px;border: 0px red solid;">
+				<img src="{{ company.company_icon }}" style="float: left;width:178px;height: 178px;" />
+				<div id="content">
+					<div id="head" style="width: 100%;height:70px;display: block;border: 0px red solid;">
+						<h6 style="float: left; margin-left: 10px;font-size: 36px;">{{ company.company_name }}</h6>
+
+					</div>
+
+					<div id="detail" style="width: 100%;border: 0px red solid; position: relative;left: 20px;">
+						<p style="font-size: 18px;">类别:{{ company.item_title }}</p>
+					</br>
+						<p style="font-size: 18px;">地址：{{ company.company_address }}</p>	</br>
+						<p style="font-size: 18px;">回头率：{{ company.head_turn }}</p>
+
+					</div>
+
+					<span id="" style="float: right; font-size: 20px;position: absolute;bottom: 20px;right: 10px;">
+				</span>
+				</div>
+
+			</div>
+			<div class="w-con evaluation-top">
+				<div class="witkeyhome-box-title">店铺综合评分</div>
+				<div class="con clearfix J-district-wrap">
+					<div class="shop-score first ">
+						<span class="shop-score-txt">完成质量：</span>
+						<span class="shop-score-score"><strong>{{ company.ability_number1 }}</strong>分</span>
+						<div class="shop-score-chart J-district-toggle">
+							<span class="chart-description">比同行业平均水平</span>
+							<span class="chart-result">
+                                                                    <span class="red-num">高&nbsp;0.02%</span>
+							</span>
+							<span class="chart-triangle"><b></b></span>
+							<!-- S=隐藏分数分布框 -->
+
+							<!-- E=隐藏分数分布框 -->
+						</div>
+					</div>
+
+					<div class="shop-score shop-score-low">
+						<span class="shop-score-txt">工作速度：</span>
+						<span class="shop-score-score"><strong>{{ company.ability_number2 }}</strong>分</span>
+						<div class="shop-score-chart J-district-toggle cur">
+							<span class="chart-description">比同行业平均水平</span>
+							<span class="chart-result">
+                                                                    <span class="green-num">低&nbsp;0.17%</span>
+							</span>
+							<span class="chart-triangle"><b></b></span>
+							<!-- S=隐藏分数分布框 -->
+
+						</div>
+
+						<!-- E=隐藏分数分布框 -->
+					</div>
+				</div>
+
+				<div class="shop-score  ">
+					<span class="shop-score-txt">服务态度：</span>
+					<span class="shop-score-score"><strong>{{ company.ability_number3 }}</strong>分</span>
+					<div class="shop-score-chart J-district-toggle">
+						<span class="chart-description">比同行业平均水平</span>
+						<span class="chart-result">
+                                                                     <span class="red-num">高&nbsp;0.18%</span>
+						</span>
+						<span class="chart-triangle"><b></b></span>
+						<!-- S=隐藏分数分布框 -->
+
+					</div>
+
+					<!-- E=隐藏分数分布框 -->
+				</div>
+			</div>
+
+			<div class="filter-comment-wrap J-services-lists clearfix">
+
+				<div id="userlist">
+					<div class="moly-poc user-fols ml20 mr20">
+						<dl class="user-information clearfix">
+							<dt>
+                                                <img src="https://avatar.zbjimg.com/020/62/57/200x200_avatar_62.jpg!big" width="48" height="48" alt=""/>
+                                <em class="fenb"></em></dt>
+							<dd>
+								<p class="name-tit">**4312dal4dc
+									<a href="http://task.zbj.com/14342712/" target="_blank">
+										<img src="//task.zbj.com/main/textimg.html?tid=14342712&color=11,115,187&fsize=9&mwidth=350&fspace=3&f=simsunbd">
+									</a>
+									成交价格：300元</p>
+								<p>评价：&nbsp;&nbsp;&nbsp;<span class="gray3">很满意 设计内容符合要求</span></p>
+								<p class="yingx">印象： <u class="r">服务周到</u>
+									<u class="b">质量很好</u>
+									<u class="r">沟通流畅</u>
+									<u class="g">速度快</u>
+									<u class="r">性价比高</u>
+								</p>
+							</dd>
+							<dd class="mint">
+								<p>2018-11-09</p>
+								<!--雇主推荐打标-->
+							</dd>
+						</dl>
+						<dl class="user-information clearfix">
+							<dt>
+                                                <img src="https://avatar.zbjimg.com/019/83/91/200x200_avatar_42.jpg!big" width="48" height="48" alt=""/>
+                                <em class="fenb"></em></dt>
+							<dd>
+								<p class="name-tit">**6633_8hop4o
+									<a href="http://task.zbj.com/14255952/" target="_blank">
+										<img src="//task.zbj.com/main/textimg.html?tid=14255952&color=11,115,187&fsize=9&mwidth=350&fspace=3&f=simsunbd">
+									</a>
+									成交价格：298元</p>
+								<p>评价：&nbsp;&nbsp;&nbsp;<span class="gray3">服务态度好，下次还找你们</span></p>
+								<p class="yingx">印象： <u class="g">有创意</u>
+									<u class="r">出稿速度快</u>
+									<u class="b">交付准时</u>
+									<u class="r">沟通顺畅</u>
+									<u class="g">专业水平高</u>
+									<u class="b">严谨认真</u>
+									<u class="g">定价合理</u>
+								</p>
+							</dd>
+							<dd class="mint">
+								<p>2018-10-30</p>
+								<!--雇主推荐打标-->
+							</dd>
+						</dl>
+						<dl class="user-information clearfix">
+							<dt>
+                                                <img src="https://avatar.zbjimg.com/021/09/95/200x200_avatar_68.jpg!big" width="48" height="48" alt=""/>
+                                <em class="fenb"></em></dt>
+							<dd>
+								<p class="name-tit">**5429ZPb11z
+									<a href="http://task.zbj.com/14249405/" target="_blank">
+										<img src="//task.zbj.com/main/textimg.html?tid=14249405&color=11,115,187&fsize=9&mwidth=350&fspace=3&f=simsunbd">
+									</a>
+									成交价格：1500元</p>
+								<p>评价：&nbsp;&nbsp;&nbsp;<span class="gray3">满意满意，感谢</span></p>
+								<p class="yingx">印象： <u class="r">沟通顺畅</u>
+									<u class="g">细致耐心</u>
+									<u class="b">质量很高</u>
+								</p>
+							</dd>
+							<dd class="mint">
+								<p>2018-10-23</p>
+								<!--雇主推荐打标-->
+							</dd>
+						</dl>
+						<dl class="user-information clearfix">
+							<dt>
+                                                <img src="https://avatar.zbjimg.com/021/09/95/200x200_avatar_68.jpg!big" width="48" height="48" alt=""/>
+                                <em class="fenb"></em></dt>
+							<dd>
+								<p class="name-tit">**5429ZPb11z
+									<a href="http://task.zbj.com/14249705/" target="_blank">
+										<img src="//task.zbj.com/main/textimg.html?tid=14249705&color=11,115,187&fsize=9&mwidth=350&fspace=3&f=simsunbd">
+									</a>
+									成交价格：480元</p>
+								<p>评价：&nbsp;&nbsp;&nbsp;<span class="gray3">效果不错，老板很满意</span></p>
+								<p class="yingx">印象： <u class="r">沟通顺畅</u>
+									<u class="g">细致耐心</u>
+									<u class="b">速度快</u>
+								</p>
+							</dd>
+							<dd class="mint">
+								<p>2018-10-23</p>
+								<!--雇主推荐打标-->
+							</dd>
+						</dl>
+						<dl class="user-information clearfix">
+							<dt>
+                                                <img src="https://avatar.zbjimg.com/021/10/47/200x200_avatar_49.jpg!big" width="48" height="48" alt=""/>
+                                <em class="fenb"></em></dt>
+							<dd>
+								<p class="name-tit">**3933_ocv474
+									<a href="http://task.zbj.com/14231374/" target="_blank">
+										<img src="//task.zbj.com/main/textimg.html?tid=14231374&color=11,115,187&fsize=9&mwidth=350&fspace=3&f=simsunbd">
+									</a>
+									成交价格：298元</p>
+								<p>评价：&nbsp;&nbsp;&nbsp;<span class="gray3">很不错！感谢！</span></p>
+								<p class="yingx">印象： <u class="b">交付准时</u>
+									<u class="r">沟通顺畅</u>
+									<u class="b">严谨认真</u>
+								</p>
+							</dd>
+							<dd class="mint">
+								<p>2018-10-22</p>
+								<!--雇主推荐打标-->
+							</dd>
+						</dl>
+						<dl class="user-information clearfix">
+							<dt>
+                                                <img src="https://avatar.zbjimg.com/021/09/95/200x200_avatar_68.jpg!big" width="48" height="48" alt=""/>
+                                <em class="fenb"></em></dt>
+							<dd>
+								<p class="name-tit">**5429ZPb11z
+									<a href="http://task.zbj.com/14200569/" target="_blank">
+										<img src="//task.zbj.com/main/textimg.html?tid=14200569&color=11,115,187&fsize=9&mwidth=350&fspace=3&f=simsunbd">
+									</a>
+									成交价格：300元</p>
+								<p>评价：&nbsp;&nbsp;&nbsp;<span class="gray3">服务态度很好，设计师专业耐心</span></p>
+								<p class="yingx">印象： <u class="b">沟通顺畅</u>
+									<u class="r">细致耐心</u>
+									<u class="g">质量很高</u>
+								</p>
+							</dd>
+							<dd class="mint">
+								<p>2018-10-12</p>
+								<!--雇主推荐打标-->
+							</dd>
+						</dl>
+						<dl class="user-information clearfix">
+							<dt>
+                                                <img src="https://avatar.zbjimg.com/021/09/95/200x200_avatar_68.jpg!big" width="48" height="48" alt=""/>
+                                <em class="fenb"></em></dt>
+							<dd>
+								<p class="name-tit">**5429ZPb11z
+									<a href="http://task.zbj.com/14200722/" target="_blank">
+										<img src="//task.zbj.com/main/textimg.html?tid=14200722&color=11,115,187&fsize=9&mwidth=350&fspace=3&f=simsunbd">
+									</a>
+									成交价格：298元</p>
+								<p>评价：&nbsp;&nbsp;&nbsp;<span class="gray3">刚好赶上活动，性价比很高</span></p>
+								<p class="yingx">印象： <u class="g">沟通顺畅</u>
+									<u class="r">细致耐心</u>
+									<u class="b">质量很高</u>
+								</p>
+							</dd>
+							<dd class="mint">
+								<p>2018-10-12</p>
+								<!--雇主推荐打标-->
+							</dd>
+						</dl>
+						<dl class="user-information clearfix">
+							<dt>
+                                                <img src="https://avatar.zbjimg.com/020/96/05/200x200_avatar_82.jpg!big" width="48" height="48" alt=""/>
+                                <em class="fenb"></em></dt>
+							<dd>
+								<p class="name-tit">**2494_tbwsdz
+									<a href="http://task.zbj.com/14184389/" target="_blank">
+										<img src="//task.zbj.com/main/textimg.html?tid=14184389&color=11,115,187&fsize=9&mwidth=350&fspace=3&f=simsunbd">
+									</a>
+									成交价格：300元</p>
+								<p>评价：&nbsp;&nbsp;&nbsp;<span class="gray3">效率很高，印刷出来效果不错</span></p>
+								<p class="yingx">印象： <u class="g">服务周到</u>
+									<u class="r">沟通顺畅</u>
+									<u class="r">质量很高</u>
+								</p>
+							</dd>
+							<dd class="mint">
+								<p>2018-10-10</p>
+								<!--雇主推荐打标-->
+							</dd>
+						</dl>
+						<dl class="user-information clearfix">
+							<dt>
+                                                <img src="https://avatar.zbjimg.com/020/96/05/200x200_avatar_82.jpg!big" width="48" height="48" alt=""/>
+                                <em class="fenb"></em></dt>
+							<dd>
+								<p class="name-tit">**2494_tbwsdz
+									<a href="http://task.zbj.com/14181982/" target="_blank">
+										<img src="//task.zbj.com/main/textimg.html?tid=14181982&color=11,115,187&fsize=9&mwidth=350&fspace=3&f=simsunbd">
+									</a>
+									成交价格：498元</p>
+								<p>评价：&nbsp;&nbsp;&nbsp;<span class="gray3">多次合作了，对他家设计师很放心</span></p>
+								<p class="yingx">印象： <u class="b">服务周到</u>
+									<u class="g">沟通顺畅</u>
+									<u class="b">质量很高</u>
+								</p>
+							</dd>
+							<dd class="mint">
+								<p>2018-10-10</p>
+								<!--雇主推荐打标-->
+							</dd>
+						</dl>
+						<dl class="user-information clearfix">
+							<dt>
+                                                <img src="https://avatar.zbjimg.com/020/96/05/200x200_avatar_82.jpg!big" width="48" height="48" alt=""/>
+                                <em class="fenb"></em></dt>
+							<dd>
+								<p class="name-tit">**2494_tbwsdz
+									<a href="http://task.zbj.com/14141596/" target="_blank">
+										<img src="//task.zbj.com/main/textimg.html?tid=14141596&color=11,115,187&fsize=9&mwidth=350&fspace=3&f=simsunbd">
+									</a>
+									成交价格：480元</p>
+								<p>评价：&nbsp;&nbsp;&nbsp;<span class="gray3">质量很高，设计出来的效果很满意</span></p>
+								<p class="yingx">印象： <u class="b">服务周到</u>
+									<u class="b">沟通顺畅</u>
+									<u class="r">质量很高</u>
+									<u class="r">专业</u>
+								</p>
+							</dd>
+							<dd class="mint">
+								<p>2018-10-10</p>
+								<!--雇主推荐打标-->
+							</dd>
+						</dl>
+					</div>
+					<div class="pagination">
+						<ul>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1.html" rel="nofollow">«</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1.html" rel="nofollow">1</a>
+							</li>
+							<li class="active">
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-2.html" rel="nofollow">2</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-3.html" rel="nofollow">3</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-4.html" rel="nofollow">4</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-5.html" rel="nofollow">5</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-6.html" rel="nofollow">6</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-7.html" rel="nofollow">7</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-8.html" rel="nofollow">8</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-9.html" rel="nofollow">9</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-10.html" rel="nofollow">10</a>
+							</li>
+							<li class="disabled">
+								<a>...</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-97.html" rel="nofollow">97</a>
+							</li>
+							<li>
+								<a href="/evaluation/evallist-uid-18168939-type-1-page-3.html" rel="nofollow">»</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>

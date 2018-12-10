@@ -4,9 +4,10 @@ from sklearn.externals import joblib
 from sklearn.neighbors import KNeighborsClassifier
 
 company_data = pd.read_csv('company.csv')
-type_data_all = pd.read_csv('datas.csv')
-type_data = type_data_all[['work_type','work_price','company_area']]
+
 def yuce(x,y):
+    type_data_all = pd.read_csv('datas.csv')
+    type_data = type_data_all[['work_type', 'work_price', 'company_area']]
     #找出所有的城市
     citys = type_data.company_area.unique()
     #找出所有的业务类型

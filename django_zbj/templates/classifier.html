@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/classifier.css' %}">
+
+		<script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
+
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+					<a class="navbar-brand" href="#">二师兄网</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="{% url 'zbj:index' %}">首页 <span class="sr-only">(current)</span></a>
+						</li>
+						<li>
+							<a href="{% url 'zbj:data' %}">数据分析</a>
+						</li>
+						<li>
+							<a href="{% url 'zbj:classifier' %}">分类</a>
+						</li>
+
+					</ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            {% if islog %}
+                                <a href="{% url 'zbj:login' %}">{{ username }}</a>
+                            {% else %}
+                                <a href="{% url 'zbj:login' %}">登录</a>
+                            {% endif %}
+                        </li>
+                        <li>
+                            {% if islog %}
+                                <a href="{% url 'zbj:logout' %}">退出登录</a>
+                            {% else %}
+                                <a href="{% url 'zbj:register' %}">注册</a>
+                            {% endif %}
+                        </li>
+                    </ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+		<div id="body">
+
+			<div class="flcp gray">
+
+				<dl class="bg0">
+					<dt>公司分类</dt>
+					<dd>
+						<p class="updonwlist">
+							<a href="/zbj/show_company/游戏美术/">游戏美术</a>
+							<a href="/zbj/show_company/游戏开发/">游戏开发</a>
+							<a href="/zbj/show_company/摄影服务/">摄影服务</a>
+							<a href="/zbj/show_company/影视制作/">影视制作</a>
+							<a href="/zbj/show_company/漫画设计/">漫画设计</a>
+							<a href="/zbj/show_company/动画设计/">动画设计</a>
+							<a href="/zbj/show_company/技术服务/">技术服务</a>
+							<a href="/zbj/show_company/测试服务/">测试服务</a>
+							<a href="/zbj/show_company/域名/云服务/">域名/云服务</a>
+							<a href="/zbj/show_company/软件SaaS/">软件SaaS</a>
+							<a href="/zbj/show_company/IT解决方案/">IT解决方案</a>
+							<a href="/zbj/show_company/大数据服务/">大数据服务</a>
+							<a href="/zbj/show_company/产品UI设计/">产品UI设计</a>
+							<a href="/zbj/show_company/软件开发/">软件开发</a>
+							<a href="/zbj/show_company/移动开发/">移动开发</a>
+							<a href="/zbj/show_company/网络建设/">网络建设</a>
+							<a href="/zbj/show_company/宣传片制作/">宣传片制作</a>
+							<a href="/zbj/show_company/广告投放/">广告投放</a>
+							<a href="/zbj/show_company/线下活动/">线下活动</a>
+							<a href="/zbj/show_company/口碑营销/">口碑营销</a>
+							<a>网络推广</a>
+							<a>渠道推广</a>
+							<a>策划/文案</a>
+							<a>广告设计</a>
+							<a>包装设计</a>
+							<a>宣传品设计</a>
+							<a>VI设计</a>
+							<a>LOGO设计</a>
+							<a>游戏资质</a>
+							<a>游戏营销</a>
+							<a>其他服务</a>
+							<a>公装服务</a>
+							<a>家庭设计</a>
+							<a>VR/3D</a>
+							<a>效果图</a>
+							<a>自建房/别墅</a>
+							<a>规划设计</a>
+							<a>建筑设计</a>
+							<a>产品设计</a>
+							<a>智能软件</a>
+							<a>制造与服务</a>
+
+						</p>
+
+						<span class="stretch"><a href="http://product.yesky.com/netphone/" id="head9994">网络电话</a></span>
+
+					</dd>
+
+				</dl>
+			</div>
+			<div class="searchb">
+				<dl>
+					<dt></dt>
+
+				</dl>
+			</div>
+			<div class="searchtj">共有<strong id="cps_count">{{ companys_count }}</strong>个商家符合条件</div>
+			<div class="cpdh">
+				<ul class="cpdhfl gray cpdhfl_qf" id="cpslist">
+					<li class="show">
+						<a href="/mobilephone/qwt/">最热门</a>
+					</li>
+					<li>
+						<a href="/mobilephone/qwt/newindex.html">最新</a>
+					</li>
+					<li>
+						<a href="/mobilephone/qwt/cheap.html">最便宜</a>
+					</li>
+					<li>
+						<a href="/mobilephone/qwt/expensive.html">最贵</a>
+					</li>
+				</ul>
+				<div class="cpdhfy" id="top_pagebar">
+					<div class="page">
+						<a rel="nofollow" href="/zbj/classifier/0">precious</a>
+						<a rel="nofollow" href="#">next</a>
+					</div>
+				</div>
+			</div>
+            <ul style="list-style: none">
+                {% for company in companys %}
+                <li>
+                    <div class="" style="padding:10px;width: 100%;height: 200px;border: 1px red solid;">
+                        <img src="{{ company.company_icon }}" style="float: left;width:178px;height: 178px;"/>
+                        <div id="content">
+
+
+                            <div id="detail" style="width: 100%;border: 0px red solid; position: relative;left: 20px;">
+                                <a href="/zbj/detail/{{ company.company_id }}/"><p style="float: left; margin-left: 10px; font-size: 20px;">{{ company.company_name }}</p></a>
+                                <br><br>
+                                <p>类别:{{ company.item_title }}</p>
+                                <p>地址：{{ company.company_address }}</p>
+                                <p>回头率：{{ company.head_turn }}</p>
+                                <h5 style="float: left;margin-right: 20px;" ;>质量:{{ company.ability_number1 }}</h5>
+                                <h5 style="float: left;margin-right: 20px;" ;>速度:{{ company.ability_number2 }}</h5>
+                                <h5 style="float: left;margin-right: 20px;" ;>态度:{{ company.ability_number3 }}</h5>
+
+                            </div>
+
+                            <span style="float: right; font-size: 20px;position: absolute;bottom: 20px;right: 10px;">
+					            <a href="">详情&gt;&gt;</a>
+				            </span>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+
+		</div>
+
+		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+	</body>
+
+</html>

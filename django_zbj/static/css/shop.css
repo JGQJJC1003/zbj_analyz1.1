@@ -1,0 +1,349 @@
+.swiper-container {
+	width: 50%;
+	height: 300px;
+	position: absolute;
+	top: 55px;
+	left: 25%;
+}
+
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+}
+
+.container {
+	position: relative;
+	top: 500px;
+}
+
+.main-text {
+	width: 70%;
+	border: aliceblue solid 1px;
+	left: 15%;
+	position: absolute;
+	top: 355px;
+	padding: 70px;
+	background-color: white;
+}
+.page{
+	position: relative;
+	top: 310px;
+	left: 1100px;
+}
+element.style {
+	min-height: 16.58em;
+}
+
+.list {
+	width: 172px;
+	height: 336px;
+	border: 1px solid #ffffff;
+	margin: 0 4px 12px 12px;
+	padding-top: 14px;
+	background: #fff;
+	overflow: hidden;
+	float: left;
+	display: inline;
+}
+ h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+img,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+div,
+span,
+p,
+strong,
+input {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+body {
+	font-family: "宋体";
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+.list p {
+	text-align: center;
+}
+.list p,
+.list h2,
+.list span,
+.list ul {
+	width: 88%;
+	margin: 0 auto 5px auto;
+	display: block;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+p {
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+
+.blue a:link,
+.blue a:visited {
+	text-decoration: none;
+	color: #1d597f;
+}
+a:link,
+a:visited {
+	text-decoration: none;
+	color: #1f3a87;
+}
+
+user agent stylesheet a:-webkit-any-link {
+	color: -webkit-link;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.list h2 {
+	line-height: 18px;
+	max-height: 36px;
+}
+.list h2 {
+	font-size: 14px;
+	line-height: 19px;
+	max-height: 34px;
+	_height: 34px;
+}
+ .list p,
+.list h2,
+.list span,
+.list ul {
+	width: 88%;
+	margin: 0 auto 5px auto;
+	display: block;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+h2 {
+	font-size: 14px;
+}
+
+h2 {
+	display: block;
+	font-size: 1.5em;
+	-webkit-margin-before: 0.83em;
+	-webkit-margin-after: 0.83em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+
+.blue a:link,
+.blue a:visited {
+	text-decoration: none;
+	color: #1d597f;
+}
+a:link,
+a:visited {
+	text-decoration: none;
+	color: #1f3a87;
+}
+
+user agent stylesheet a:-webkit-any-link {
+	color: -webkit-link;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.list p,
+.list h2,
+.list span,
+.list ul {
+	width: 88%;
+	margin: 0 auto 5px auto;
+	display: block;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+.list h3 {
+	float: left;
+	color: #f60;
+	font-family: "微软雅黑", "黑体";
+	font-size: 14px;
+}
+
+h3 {
+	display: block;
+	font-size: 1.17em;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+
+.list .duibi {
+	background: url(http://image.tianjimedia.com/TLimages/product/img/prflhb.gif) no-repeat 0 -178px;
+	width: 55px;
+	height: 22px;
+	float: right;
+	cursor: pointer;
+}
+
+.list span a {
+	padding-right: 5px;
+	display: inline-block;
+}
+
+.list ul {
+	margin-bottom: 0;
+}
+.list p,
+.list h2,
+.list span,
+.list ul {
+	width: 88%;
+	margin: 0 auto 5px auto;
+	display: block;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+.list li {
+	width: 100%;
+	float: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	height: 22px;
+}
+
+ li {
+	list-style-type: none;
+	list-style: none;
+}
+
+li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+
+ul,
+menu,
+dir {
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
+}
+
+.list p,
+.list h2,
+.list span,
+.list ul {
+	width: 88%;
+	margin: 0 auto 5px auto;
+	display: block;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+.blue a:link,
+.blue a:visited {
+	text-decoration: none;
+	color: #1d597f;
+}
+
+ .list span a {
+	padding-right: 5px;
+	display: inline-block;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+	color: #1f3a87;
+}
+
+user agent stylesheet a:-webkit-any-link {
+	color: -webkit-link;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.list ul {
+	margin-bottom: 0;
+}
+
+ .list p,
+.list h2,
+.list span,
+.list ul {
+	width: 88%;
+	margin: 0 auto 5px auto;
+	display: block;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+li {
+	list-style-type: none;
+	list-style: none;
+}
+
+h3 {
+	font-size: 14px;
+}
+
+body {
+	background-color: #F0F3EF;
+}
+
+.pagination {
+	position: relative;
+	bottom: 20px;
+	left: 10%;
+}
+
+.list h2 {
+	line-height: 18px;
+	max-height: 36px;
+}
+
+ .list h2 {
+	font-size: 14px;
+	line-height: 19px;
+	max-height: 34px;
+	_height: 34px;
+}
+ .list p,
+.list h2,
+.list span,
+.list ul {
+	width: 88%;
+	margin: 0 auto 5px auto;
+	display: block;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+h2 {
+	font-size: 14px;
+}

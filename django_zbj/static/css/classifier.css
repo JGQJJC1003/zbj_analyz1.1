@@ -1,0 +1,230 @@
+
+element.style {
+}
+
+
+.searcha {
+    width: 100%;
+    overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6, form, img, ul, ol, li, dl, dt, dd, table, div, span, p, strong, input {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+Inherited from body
+
+body {
+    font-family: 宋体;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+}
+dl {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+dd {
+    display: block;
+    -webkit-margin-start: 40px;
+}
+.searcha dd {
+    float: left;
+    width: 100%;
+    line-height: 23px;
+    overflow: hidden;
+}
+.searcha dt {
+    float: left;
+    width: 96px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    padding: 5px 10px 8px 0;
+}
+dt {
+    display: block;
+}
+.searcha dl {
+    width: 100%;
+    padding: 8px 0 3px 0;
+    background: url(http://image.tianjimedia.com/TLimages/product/img/pr_line.gif) repeat-x bottom;
+    overflow: hidden;
+    float: left;
+}
+#body{
+	position: absolute;
+	top: 100px;
+	left: 27%;
+	width: 52%;
+
+}
+.flcp {
+    font-family: arial, 宋体;
+    width: 100%;
+    margin-bottom: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(10, 80, 161);
+    border-image: initial;
+    padding: 5px 0px;
+}div {
+    display: block;
+}.flcp dl {
+    margin-left: 15px;
+    width: 96%;
+    overflow: hidden;
+    padding: 10px 0 4px 0;
+    border-bottom: 1px dashed #cacaca;
+}.flcp dt {
+    float: left;
+    width: 60px;
+    font-weight: bold;
+    color: #1f3a87;
+    line-height: 23px;
+}.stretch, .Stretch, .Shrink {
+    display: none;
+}.flcp dd {
+    float: left;
+    width: 90%;
+    line-height: 23px;
+}.flcp dd a.red, .flcp dd a.red:visited {
+
+
+    line-height: 15px;
+    padding-top: 2px;
+}.flcp dd a {
+    padding: 0px 0.5%;
+    margin-right: 0.5%;
+    display: inline-block;
+}.searchtj {
+    float: left;
+    position: relative;
+    margin-top: -22px;
+    left: 27px;
+    width: 466px;
+}.searchb dt strong, .searchtj strong {
+    color: #f60;
+    padding: 0 3px;
+}strong, b {
+    font-weight: bold;
+}.searchb dl {
+    width: 100%;
+    border-top: 1px solid #ececec;
+    overflow: hidden;
+    background: #fafafa;
+    height: 29px;
+    text-align: center;
+}.searchb {
+    width: 100%;
+    border-top: 1px solid #c6c6c6;
+    position: relative;
+}.searchb dt {
+    float: left;
+    padding: 7px 0 0 27px;
+}.searchb dd {
+    background: url(http://image.tianjimedia.com/TLimages/product/img/pr7.gif) no-repeat;
+    background-position: 0 -26px;
+    width: 74px;
+    height: 22px;
+    padding-top: 5px;
+    position: absolute;
+    top: -1px;
+    color: #666;
+    cursor: pointer;
+    left: 46.6%;
+}.cpdh {
+    border-right: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+    height: 41px;
+    background-position: 0 -137px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.cpdhfl {
+    float: left;
+    width: 40%;
+    overflow: hidden;
+}ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}.cpdhfl li.show {
+    background: #fff;
+    border-top: 2px solid #333;
+    font-size: 16px;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    border-bottom: 0;
+    color: #333;
+    position: relative;
+    margin-left: -1px;
+    line-height: 33px;
+}.cpdhfl li {
+    padding: 0 15px;
+    font-family: "微软雅黑","黑体";
+    font-size: 14px;
+    font-weight: bold;
+    float: left;
+    color: #666;
+    line-height: 39px;
+    height: 39px;
+}li {
+    list-style-type: none;
+    list-style: none;
+}.cpdhfy {
+    float: right;
+    padding: 7px 5px 0 0;
+}.page {
+    font-family: "微软雅黑",arial;
+    font-size: 16px;
+}.page span {
+    margin: 0 4px;
+    background: #2e78a7;
+    color: #fff;
+    padding: 0 5px;
+}.page a, .page span, .page b {
+    margin: 0 4px;
+    display: inline-block;
+    line-height: 26px;
+    vertical-align: middle;
+}
+.page a, .page span, .page b {
+    margin: 0 4px;
+    display: inline-block;
+    line-height: 26px;
+    vertical-align: middle;
+}a:link, a:visited {
+    text-decoration: none;
+    color: #1f3a87;
+}
+
+.next {
+    background: url(http://image.tianjimedia.com/TLimages/product/img/prflhb.gif) no-repeat 0 -52px;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.cpdh span {
+    font-family: "微软雅黑","黑体";
+    font-size: 17px;
+    line-height: 41px;
+    padding-left: 20px;
+    color: #666;
+    font-weight: bold;
+}

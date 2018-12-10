@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+		<script type="text/javascript" src="{% static 'js/jquery-3.3.1.js' %}"></script>
+		<script type="text/javascript">
+		</script>
+		<style>
+			input{
+				
+			width: 300px;
+			height: 50px;
+			display: block;
+			font-size: 20px;
+			}
+			button{
+				width: 100px;
+				height: 50px;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+					<a class="navbar-brand" href="#">二师兄</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="{% url 'zbj:index' %}">首页 <span class="sr-only">(current)</span></a>
+						</li><li>
+							<a href="{% url 'zbj:data' %}">数据分析</a>
+						</li>
+						<li>
+							<a href="{% url 'zbj:classifier' %}">分类</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">关于我们 </a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							{% if islog %}
+                                <a href="{% url 'zbj:login' %}">{{ username }}</a>
+                            {% else %}
+                                <a href="{% url 'zbj:login' %}">登录</a>
+                            {% endif %}
+						</li>
+						<li>
+                            {% if islog %}
+                                <a href="{% url 'zbj:logout' %}">退出登录</a>
+                            {% else %}
+                                <a href="{% url 'zbj:register' %}">注册</a>
+                            {% endif %}						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id='choice'>
+			<a href="{% url 'zbj:data' %}"><button id='btn1'>词云</button></a>
+            <a href="{% url 'zbj:pycharts_good' %}"><button id='btn2'>价格</button></a>
+            <a href="{% url 'zbj:pycharts_price' %}"><button id='btn3'>商品</button></a>
+            <a href="{% url 'zbj:predict' %}"><button id='btn4'>预测</button></a>
+	
+		</div>
+		<div style="width: 50%;height: 400px; border: 0px red solid;position: relative;left: 25%;top: 20%;">
+			<center>
+                <form action="{% url 'zbj:predict' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="city" id="city" value="" placeholder="请输入预测城市"/>
+                    <br /><br />
+                    <input type="text" name="yewu" id="" placeholder="请输入预测业务"/>
+
+                    <br /><br />
+                    <button >预测</button>
+			    </form>
+			</center>
+		</div>
+
+		<script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+	</body>
+
+</html>
