@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from sklearn.externals import joblib
 from sklearn.neighbors import KNeighborsClassifier
 
 company_data = pd.read_csv('company.csv')
@@ -25,11 +26,13 @@ def yuce(x,y):
     #使用KNN近邻算法
     KNN =KNeighborsClassifier(10)
     KNN.fit(X_train,Y_train.astype('int'))
+    joblib.dump(KNN, 'yuce.m')
+    moxing = joblib.load('yuce.m')
     try:
         city_index = city_int(city)
         typex_index = type_int(work_types)
         X_test = [[city_index, typex_index]]
-        y_ = KNN.predict(X_test)[0]
+        y_ = moxing.predict(X_test)[0]
         print('本市的此业务价格大概为：', y_, '元')
     except Exception as e:
         print("无效查询")
